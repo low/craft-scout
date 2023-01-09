@@ -3,7 +3,9 @@
 namespace rias\scout\jobs;
 
 use Craft;
+use craft\base\Element;
 use craft\queue\BaseJob;
+use rias\scout\Scout;
 
 class IndexElement extends BaseJob
 {
