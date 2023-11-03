@@ -80,7 +80,9 @@ class AlgoliaEngine extends Engine
         }
 
         return $index->deleteBy([
-            'filters' => 'distinctID:' . implode(' OR distinctID:', $objectIds),
+            'filters' => implode(' OR ', array_map(function ($id) {
+                return "distinctID = $id";
+            }))
         ]);
     }
 
